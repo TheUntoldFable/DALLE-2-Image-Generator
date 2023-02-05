@@ -17,7 +17,7 @@ module.exports = {
     ecmaVersion: 'latest',
     tsconfigRootDir: __dirname,
     sourceType: 'module',
-    project: './tsconfig.json',
+    project: ['./tsconfig.json', './vite.config.ts'],
   },
   plugins: ['react', '@typescript-eslint', 'prettier', 'unused-imports'],
   rules: {
