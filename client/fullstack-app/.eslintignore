@@ -1,3 +1,3 @@
 /node_modules
-.eslint.cjs
+/root/src/tailwind.config.cjs
 babel.config.json
