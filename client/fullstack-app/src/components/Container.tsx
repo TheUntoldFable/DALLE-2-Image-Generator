@@ -10,7 +10,7 @@ function Container(props: ContainerProps): JSX.Element {
       // eslint-disable-next-line tailwindcss/no-custom-classname
       className={`${defaultClasses.join(' ')} ${
         bg ?? 'bg-grey-900'
-      } flex flex-1 flex-col scroll-smooth`}
+      } flex h-full w-full flex-col scroll-smooth`}
     >
       {children}
     </div>

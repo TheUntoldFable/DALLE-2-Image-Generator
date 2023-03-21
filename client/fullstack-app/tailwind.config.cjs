@@ -24,6 +24,17 @@ module.exports = {
         '2xl': '2.2rem',
       },
       extend: {
+        animation: {
+          fade: 'fadeOut 0.8s ease-in-out',
+        },
+  
+        // that is actual animation
+        keyframes: theme => ({
+          fadeOut: {
+            '0%': { opacity: 0},
+            '100%': { opacity: 100 },
+          },
+        }),
         colors: {
           'blue': '#1fb6ff',
           'purple': '#7e5bef',
