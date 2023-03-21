@@ -1,6 +1,8 @@
+import profileImage from '../assets/images/T01PBDCHA4V-U031XAESV6Y-6dd6b8adf372-512.jpeg'
 interface Props {
   onPress: () => void
 }
+
 
 function HeadingSection({ onPress }: Props) {
   return (
@@ -11,7 +13,7 @@ function HeadingSection({ onPress }: Props) {
         <figure className="mt-auto flex flex-col items-center justify-between space-x-0 md:mt-10 md:flex-row md:space-x-20">
           <img
             className="mx-auto h-72 w-72 rounded-xl"
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            src={profileImage}
             alt=""
           />
 
