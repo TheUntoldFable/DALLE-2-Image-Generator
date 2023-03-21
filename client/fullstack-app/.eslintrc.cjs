@@ -1,19 +1,17 @@
-import tailwindConfig from './tailwind.config.cjs'
-
 module.exports = {
-  ignorePatterns: ['.tailwind.config.cjs'],
+  ignorePatterns: ['./tailwind.config.cjs'],
   env: {
     browser: true,
     es2021: true,
   },
   extends: [
-    "airbnb",
+    'plugin:tailwindcss/recommended',
+    'airbnb',
     'airbnb/hooks',
     'airbnb-typescript',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
-    'plugin:tailwindcss/recommended',
   ],
   overrides: [],
   parser: '@typescript-eslint/parser',
@@ -23,20 +21,31 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json', './vite.config.ts'],
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'unused-imports'],
+  plugins: ['react', '@typescript-eslint', 'unused-imports', 'prettier'],
   rules: {
-    "tailwindcss/no-custom-classname": [2, {
-       "config": tailwindConfig,
-    }],
+    'react/require-default-props': [
+      0,
+      {
+        forbidDefaultForRequired: true,
+        classes: 'defaultProps' | 'ignore',
+        functions: 'defaultProps' | 'defaultArguments' | 'ignore',
+        // @deprecated Use `functions` option instead.
+        ignoreFunctionalComponents: true,
+      },
+    ],
+    'tailwindcss/no-custom-classname': [
+      1,
+      {
+        config: './tailwind.config.cjs',
+      },
+    ],
     // suppress errors for missing 'import React' in files
-    'react/react-in-jsx-scope': 'off',
+    'react/react-in-jsx-scope': 0,
     // allow jsx syntax in js files (for next.js project)
     'react/jsx-filename-extension': [
       1,
       { extensions: ['.js', '.jsx', 'ts', '.tsx'] },
     ], // should add ".ts" if typescript project
-    '@typescript-eslint/no-unused-vars': 'off',
-    'unused-imports/no-unused-imports': 'warn',
     'unused-imports/no-unused-vars': [
       'warn',
       {

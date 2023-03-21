@@ -1,8 +1,18 @@
+import { MutableRefObject, createRef, useRef } from 'react'
+import { BodySection } from '../components/BodySection'
+import Container from '../components/Container'
+import HeadingSection from '../components/HeadingSection'
+
 function Home() {
+  const bodyRef = useRef<HTMLTableSectionElement | any>()
+
+  const onScroll = () => bodyRef.current?.scrollIntoView({ behavior: 'smooth' })
+
   return (
-    <div className="bg-blue h-28 sm:bg-gray-dark">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+    <Container>
+      <HeadingSection onPress={onScroll} />
+      <BodySection forwardedRef={bodyRef} />
+    </Container>
   )
 }
 
