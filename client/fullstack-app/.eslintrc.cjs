@@ -27,8 +27,8 @@ module.exports = {
       0,
       {
         forbidDefaultForRequired: true,
-        classes: 'defaultProps' | 'ignore',
-        functions: 'defaultProps' | 'defaultArguments' | 'ignore',
+        classes: 'defaultProps',
+        functions: 'defaultProps',
         // @deprecated Use `functions` option instead.
         ignoreFunctionalComponents: true,
       },
