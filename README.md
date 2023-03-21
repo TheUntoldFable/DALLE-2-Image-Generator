@@ -1,6 +1,14 @@
-# Project Rules
+# Project Stack
 
-## Commit Guideline
+- [Tailwindcss](https://tailwindcss.com/docs/installation)  
+- [ReactJS](https://react.dev/learn)
+- [Vite](https://vitejs.dev/guide/)
+- [Node JS](https://nodejs.org/en/docs)
+- [ESLint](https://eslint.org/)
+
+-----
+
+## ***Commit Guideline***
 
 - `build`: Build related changes (eg: npm related/ adding external dependencies)
 - `chore`: A code change that external user won't see (eg: change to .gitignore file or .prettierrc file)
