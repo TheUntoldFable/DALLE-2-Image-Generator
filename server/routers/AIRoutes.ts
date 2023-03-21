@@ -13,7 +13,7 @@ const config = new Configuration({
 
 const openAI = new OpenAIApi(config);
 
-AIRoutes.route("/").get(async (req: Request, res: Response) => {
+AIRoutes.route("/").post(async (req: Request, res: Response) => {
   const { prompt } = req.body;
 
   try {
@@ -26,7 +26,7 @@ AIRoutes.route("/").get(async (req: Request, res: Response) => {
 
     const image = aiRes.data.data[0].b64_json;
 
-    res.status(200).json({ photo: image });
+    res.status(200).json({ photo: image});
   } catch (error: any) {
     console.log(error);
     res.status(500).send(error?.response.data.message ?? 'Error')
