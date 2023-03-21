@@ -19,7 +19,7 @@ function HeadingSection({ onPress }: Props) {
             <blockquote className="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9 md:text-left">
               <p>
                 “Welcome to our website, where we help turn your words into
-                art!.”
+                art!”
               </p>
             </blockquote>
             <div className="mt-4 flex flex-col ">

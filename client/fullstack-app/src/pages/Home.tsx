@@ -1,4 +1,4 @@
-import { MutableRefObject, createRef, useRef } from 'react'
+import { useRef } from 'react'
 import { BodySection } from '../components/BodySection'
 import Container from '../components/Container'
 import HeadingSection from '../components/HeadingSection'
