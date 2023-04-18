@@ -4,7 +4,7 @@ import Container from '../components/Container'
 import HeadingSection from '../components/HeadingSection'
 
 function Home() {
-  const bodyRef = useRef<HTMLTableSectionElement | any>()
+  const bodyRef = useRef<HTMLTableSectionElement>()
 
   const onScroll = () => bodyRef.current?.scrollIntoView({ behavior: 'smooth' })
 

@@ -1,9 +1,9 @@
-import React, { MutableRefObject, useEffect, useState } from 'react'
+import React, { MutableRefObject, RefObject, useState } from 'react'
 import axios from 'axios'
 import Loader from './Loader'
 
 interface Props {
-  forwardedRef?: MutableRefObject<HTMLTableSectionElement>
+  forwardedRef: MutableRefObject<HTMLTableSectionElement | undefined>
 }
 
 // eslint-disable-next-line react/display-name, import/prefer-default-export
@@ -41,16 +41,21 @@ export const BodySection = React.forwardRef(({ forwardedRef }: Props) => {
   }
 
   return (
-    <section ref={forwardedRef} className="my-10 flex w-full justify-center">
+    <section
+      ref={forwardedRef as RefObject<HTMLTableSectionElement>}
+      className="my-10 flex w-full justify-center"
+    >
       <div className="flex w-full flex-col items-center justify-center space-y-9">
         <div className="flex h-44 w-full items-center justify-center bg-emerald-300 text-center">
           <h2 className="md:text-2xl">What do you have in mind?</h2>
         </div>
         <form onSubmit={onSubmit}>
-          <div className="flex flex-col space-y-2">
-            <label htmlFor="prompt" id="prompt">
-              Your prompt:
-            </label>
+          <label
+            className="flex flex-col space-y-2"
+            htmlFor="prompt"
+            id="prompt"
+          >
+            Your prompt:
             <input
               className=" rounded-md border-2 border-emerald-300 p-2"
               value={form.prompt}
@@ -60,7 +65,7 @@ export const BodySection = React.forwardRef(({ forwardedRef }: Props) => {
               placeholder="Please enter a prompt!"
               onChange={handleChange}
             />
-          </div>
+          </label>
           <button
             onClick={onGenerateImage}
             type="submit"

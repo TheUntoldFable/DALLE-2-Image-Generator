@@ -1,8 +1,8 @@
 import profileImage from '../assets/images/T01PBDCHA4V-U031XAESV6Y-6dd6b8adf372-512.jpeg'
+
 interface Props {
   onPress: () => void
 }
-
 
 function HeadingSection({ onPress }: Props) {
   return (
