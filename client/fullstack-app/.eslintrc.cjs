@@ -34,7 +34,7 @@ module.exports = {
       },
     ],
     'tailwindcss/no-custom-classname': [
-      1,
+      0,
       {
         config: './tailwind.config.cjs',
       },
