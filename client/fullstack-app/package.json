@@ -7,7 +7,7 @@
     "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "prepare": "husky install",
+    "prepare": "cd .. cd .. husky install",
     "stylelint-check": "stylelint-config-prettier-check"
   },
   "dependencies": {
