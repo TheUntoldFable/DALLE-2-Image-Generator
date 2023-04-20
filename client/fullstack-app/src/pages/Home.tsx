@@ -1,7 +1,7 @@
 import { useRef } from 'react'
-import { BodySection } from '../components/BodySection'
 import Container from '../components/Container'
 import HeadingSection from '../components/HeadingSection'
+import BodySection from '../components/BodySection'
 
 function Home() {
   const bodyRef = useRef<HTMLTableSectionElement>()
