@@ -6,6 +6,9 @@
   "scripts": {
     "start": "nodemon ./main.ts"
   },
+  "engines": {
+    "node": ">=14 <15"
+  },
   "author": "Tsvetomir",
   "license": "ISC",
   "dependencies": {
