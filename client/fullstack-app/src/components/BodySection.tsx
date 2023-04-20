@@ -1,30 +1,34 @@
-import React, { MutableRefObject, RefObject, useState } from 'react'
-import axios from 'axios'
+import React, {
+  ChangeEvent,
+  MouseEventHandler,
+  MutableRefObject,
+  RefObject,
+  useState,
+} from 'react'
 import Loader from './Loader'
+import { API } from '../api/api'
 
 interface Props {
   forwardedRef: MutableRefObject<HTMLTableSectionElement | undefined>
 }
 
-// eslint-disable-next-line react/display-name, import/prefer-default-export
-export const BodySection = React.forwardRef(({ forwardedRef }: Props) => {
+function BodySection({ forwardedRef }: Props) {
+
+  const [isLoading, setIsLoading] = useState(false)
+
   const [form, setForm] = useState({
     prompt: '',
     photo: '',
   })
-  const [isLoading, setIsLoading] = useState(false)
 
-  const onGenerateImage = async (e: any) => {
-    e.preventDefault()
+  const onGenerateImage = async () => {
     if (form.prompt) {
       setIsLoading(true)
       try {
-        const res = await axios({
-          method: 'post',
-          url: 'http://localhost:8080/kurzgezaht/aiPost',
-          data: { prompt: form.prompt },
-          headers: { 'Content-Type': 'application/json' },
+        const res = await API.post('/kurzgezaht/aiPost', {
+          prompt: form.prompt,
         })
+
         setIsLoading(false)
         setForm({ ...form, photo: `data:image/jpeg;base64,${res.data.photo}` })
       } catch (error) {
@@ -36,7 +40,7 @@ export const BodySection = React.forwardRef(({ forwardedRef }: Props) => {
 
   const onSubmit = () => null
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     return setForm({ ...form, [e.target.name]: e.target.value })
   }
 
@@ -91,4 +95,6 @@ export const BodySection = React.forwardRef(({ forwardedRef }: Props) => {
       </div>
     </section>
   )
-})
+}
+
+export default React.forwardRef(BodySection)

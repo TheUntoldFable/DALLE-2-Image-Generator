@@ -55,5 +55,6 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+    'no-console': ['allow'],
   },
 }
