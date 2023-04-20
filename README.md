@@ -1,6 +1,6 @@
 # Project Stack
 
-- [Tailwindcss](https://tailwindcss.com/docs/installation)  
+- [Tailwind CSS](https://tailwindcss.com/docs/installation)  
 - [React JS](https://react.dev/learn)
 - [Vite](https://vitejs.dev/guide/)
 - [Express JS](https://expressjs.com/)
