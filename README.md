@@ -25,3 +25,5 @@
 ```
 <type>(<scope>): <subject>
 ```
+
+Node Version to use: 14.20.1
