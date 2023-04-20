@@ -21,7 +21,7 @@ app.use('/kurzgezaht/aiPost', AIRoutes)
 const initServer = async () => {
     try {
         app.listen(PORT, () => {
-            console.log(`Example app listening on port ${PORT}`);
+            console.log(`Server listening on port ${PORT}`);
           });
           
     } catch (error) {
