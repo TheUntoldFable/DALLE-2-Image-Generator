@@ -21,8 +21,7 @@ function BodySection({ forwardedRef }: Props) {
     photo: '',
   })
 
-  const onGenerateImage = async (e: any) => {
-    e.preventDefault()
+  const onGenerateImage = async () => {
     if (form.prompt) {
       setIsLoading(true)
       try {
@@ -72,8 +71,8 @@ function BodySection({ forwardedRef }: Props) {
             />
           </label>
           <button
-            onSubmit={onGenerateImage}
-            type="submit"
+            onClick={onGenerateImage}
+            type="button"
             className="text-md delay-50 mt-10 h-10 w-52 rounded-md bg-teal-400 transition ease-in-out hover:translate-y-1 hover:scale-110"
           >
             {isLoading ? (
