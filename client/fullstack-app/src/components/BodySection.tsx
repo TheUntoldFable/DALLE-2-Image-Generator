@@ -1,6 +1,5 @@
 import React, {
   ChangeEvent,
-  MouseEventHandler,
   MutableRefObject,
   RefObject,
   useState,
@@ -13,7 +12,6 @@ interface Props {
 }
 
 function BodySection({ forwardedRef }: Props) {
-
   const [isLoading, setIsLoading] = useState(false)
 
   const [form, setForm] = useState({
