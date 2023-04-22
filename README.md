@@ -26,4 +26,4 @@
 <type>(<scope>): <subject>
 ```
 
-Node Version to use: 14.20.1
+[Backend] Node -V: 14.20.1
